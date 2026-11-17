@@ -1,0 +1,518 @@
+<!--
+Template Name: rawstuf
+File Name: index.html
+Author Name: ThemeVault
+Author URI: https://www.themevault.net/
+License URI: https://www.themevault.net/license/
+Version: 2.0
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>rawstuf</title>
+        <meta name="description" content="Rawstuf is an auto parts shop template: search by license plate or year, make and model, see which parts fit your car, and shop brakes, clutches, cooling, electrics and exhaust.">
+        <link rel="icon" href="images/favicon.png"/>
+
+        <!-- Bootstrap 5, Font Awesome 6, then v1's own stylesheets in v1's order -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bs3-defaults.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <link href="css/bs5-shim.css" rel="stylesheet">
+        <link href="css/_modern.css" rel="stylesheet">
+        <link href="css/design.css" rel="stylesheet">
+    </head>
+    <body class="tv-preload rs-home" id="myPage">
+
+        <header class="rs-header" data-section="header">
+            <div class="rs-topbar">
+                <div class="rs-wrap rs-topbar__in">
+                    <div class="rs-topbar__picks">
+                        <div class="dropdown rs-pick">
+                            <button class="rs-pick__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe" aria-hidden="true"></i> <span class="rs-pick__lbl">Language:</span> English</button>
+                            <ul class="dropdown-menu rs-menu">
+                                <li><button class="dropdown-item language-select" type="button" name="en-gb">English</button></li>
+                                <li><button class="dropdown-item language-select" type="button" name="ar">Arabic</button></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown rs-pick">
+                            <button class="rs-pick__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><strong>$</strong> <span class="rs-pick__lbl">Currency:</span> USD</button>
+                            <ul class="dropdown-menu rs-menu">
+                                <li><button class="dropdown-item currency-select" type="button" name="EUR">&euro; Euro</button></li>
+                                <li><button class="dropdown-item currency-select" type="button" name="GBP">&pound; Pound Sterling</button></li>
+                                <li><button class="dropdown-item currency-select" type="button" name="USD">$ US Dollar</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="rs-topbar__note"><i class="fas fa-truck-fast" aria-hidden="true"></i> Free delivery on orders over $75 &middot; Parts desk <a href="tel:+18005550142">1-800-555-0142</a></p>
+                </div>
+            </div>
+            <div class="rs-bar">
+                <div class="rs-wrap rs-bar__in">
+                    <a class="rs-logo" href="index.html"><img src="images/logo.png" alt="Rawstuf" width="200" height="34"></a>
+                    <form class="rs-search" id="header-search" name="header-search" action="product.html" role="search" aria-label="Search parts">
+                        <label class="visually-hidden" for="rs-search-q">Search parts</label>
+                        <input id="rs-search-q" name="search" type="search" placeholder="Part name, part number or brand" autocomplete="off">
+                        <button type="submit" aria-label="Search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><span>Search</span></button>
+                    </form>
+                    <div class="rs-actions">
+                        <a class="rs-garage" href="index.html#finder" data-garage-chip>
+                            <i class="fas fa-car-side" aria-hidden="true"></i>
+                            <span class="rs-garage__txt"><small>My garage</small><strong data-garage-name>Add your car</strong></span>
+                        </a>
+                        <a class="rs-icon" href="login.html" id="wishlist-total" title="Wish List (0)" aria-label="Wish list, 0 items"><i class="far fa-heart" aria-hidden="true"></i><span class="rs-count" data-wish-count>0</span></a>
+                        <div class="dropdown rs-acct">
+                            <button class="rs-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="My account"><i class="far fa-user" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-end rs-menu">
+                                <li><a class="dropdown-item" href="register.html">Register</a></li>
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown rs-cart">
+                            <button class="rs-cart__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fas fa-basket-shopping" aria-hidden="true"></i> <span id="cart-total"><span class="rs-cart__n" data-cart-count>1</span><span class="rs-cart__txt"> item(s) - <span data-cart-sum>$242.00</span></span></span></button>
+                            <div class="dropdown-menu dropdown-menu-end rs-minicart">
+                                <ul class="rs-minicart__list">
+                                    <li class="rs-minicart__row">
+                                        <a href="single-product.html"><img src="images/p1.jpg" alt="All-Season Tire 205/55 R16" width="56" height="74"></a>
+                                        <span class="rs-minicart__name"><a href="single-product.html">All-Season Tire 205/55 R16</a><small>x 1</small></span>
+                                        <span class="rs-minicart__price">$242.00</span>
+                                        <button type="button" class="rs-minicart__rm" title="Remove" aria-label="Remove All-Season Tire from cart"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+                                    </li>
+                                </ul>
+                                <dl class="rs-minicart__sums">
+                                    <dt>Sub-Total</dt><dd>$200.00</dd>
+                                    <dt>Eco Tax (-2.00)</dt><dd>$2.00</dd>
+                                    <dt>VAT (20%)</dt><dd>$40.00</dd>
+                                    <dt class="rs-minicart__total">Total</dt><dd class="rs-minicart__total">$242.00</dd>
+                                </dl>
+                                <div class="rs-minicart__go">
+                                    <a class="rs-btn rs-btn--line" href="cart.html"><i class="fas fa-cart-shopping" aria-hidden="true"></i> View Cart</a>
+                                    <a class="rs-btn" href="cart.html"><i class="fas fa-share" aria-hidden="true"></i> Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="rs-burger navbar-toggler" data-bs-toggle="collapse" data-bs-target="#rs-cats" aria-controls="rs-cats" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars" aria-hidden="true"></i><span>Parts</span></button>
+                    </div>
+                </div>
+            </div>
+            <nav class="rs-cats navbar" aria-label="Part categories">
+                <div class="rs-wrap">
+                    <div class="collapse navbar-collapse" id="rs-cats">
+                        <ul class="nav navbar-nav rs-cats__list">
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-circle-dot" aria-hidden="true"></i>Brakes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-link" aria-hidden="true"></i>Cables</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-gear" aria-hidden="true"></i>Clutch</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-temperature-low" aria-hidden="true"></i>Cooling</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-car-battery" aria-hidden="true"></i>Electrics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-oil-can" aria-hidden="true"></i>Engine</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-wind" aria-hidden="true"></i>Exhaust</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main id="rs-main">
+        <div id="common-home">
+            <!-- Registration search is an optional feature: data-plate="on" shows it, "off" leaves Year / Make / Model as the whole finder.
+                 A live store points data-plate-provider at its plate-lookup service; "demo" matches any plate to a sample car. -->
+            <section class="rs-finder" data-section="finder" id="finder" data-plate="on" data-plate-provider="demo">
+                <div class="rs-wrap rs-finder__in">
+                    <div class="rs-finder__desk">
+                        <p class="rs-kicker">The parts counter for everyday cars</p>
+                        <h1 class="rs-finder__title">Parts that fit, <em>checked before you pay.</em></h1>
+                        <p class="rs-finder__lede">Brakes, clutches, cooling, electrics and exhaust. Tell us your car once and every part on the site says whether it fits.</p>
+                        <form class="rs-plate" id="plate-search" name="plate-search" aria-label="Find parts by license plate" data-plate-form novalidate>
+                            <label class="rs-plate__label" for="rs-plate-reg">Your license plate</label>
+                            <div class="rs-plate__row">
+                                <span class="rs-plate__field">
+                                    <span class="rs-plate__band" aria-hidden="true">RS</span>
+                                    <input id="rs-plate-reg" name="plate" type="text" placeholder="7ABC123" maxlength="10" autocomplete="off" spellcheck="false" required>
+                                </span>
+                                <button class="rs-btn rs-btn--big" type="submit">Find my parts</button>
+                            </div>
+                            <p class="rs-plate__msg" data-plate-msg role="status" hidden></p>
+                        </form>
+                        <p class="rs-finder__or"><span class="rs-finder__or-plate">or pick your car</span><span class="rs-finder__or-solo">Pick your car</span></p>
+                        <form class="rs-ymm" id="vehicle-finder" name="vehicle-finder" aria-label="Find parts by vehicle" data-ymm-form>
+                            <div class="rs-ymm__f">
+                                <label for="rs-ymm-year">Year</label>
+                                <select id="rs-ymm-year" name="year" data-ymm="year" required><option value="">Year</option></select>
+                            </div>
+                            <div class="rs-ymm__f">
+                                <label for="rs-ymm-make">Make</label>
+                                <select id="rs-ymm-make" name="make" data-ymm="make" required disabled><option value="">Make</option></select>
+                            </div>
+                            <div class="rs-ymm__f">
+                                <label for="rs-ymm-model">Model</label>
+                                <select id="rs-ymm-model" name="model" data-ymm="model" required disabled><option value="">Model</option></select>
+                            </div>
+                            <button class="rs-btn rs-btn--dark" type="submit"><i class="fas fa-car-side" aria-hidden="true"></i> Save to my garage</button>
+                        </form>
+                    </div>
+                    <div class="rs-finder__show">
+                        <div id="myCarousel" class="carousel slide carousel-fade rs-show" data-bs-ride="carousel" data-bs-interval="6000">
+                            <div class="carousel-indicators rs-show__dots">
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Engine service"></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Engine internals"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active rs-show__slide rs-show__slide--low" data-key="service">
+                                    <img src="images/adv1.jpg" alt="Mechanic working on an engine" width="570" height="500">
+                                    <a class="rs-show__cap" href="product.html"><small>Engine service</small><strong>Up to 50% off belts, filters and gaskets</strong><span>See the offers <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+                                </div>
+                                <div class="carousel-item rs-show__slide rs-show__slide--cut" data-key="internals">
+                                    <img src="images/Image 17.png" alt="Engine pistons, camshaft and timing gears" width="686" height="555">
+                                    <a class="rs-show__cap" href="product.html"><small>Engine internals</small><strong>Pistons, cams and timing kits</strong><span>Shop engine <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="rs-promises" data-section="promises">
+                <div class="rs-wrap">
+                    <ul class="rs-promises__list">
+                        <li class="rs-promise" data-key="shipping"><img src="images/ship-1.png" alt="" width="40" height="40"><div><h5>free shipping</h5><p>On parts orders over $75</p></div></li>
+                        <li class="rs-promise" data-key="delivery"><img src="images/ship-2.png" alt="" width="40" height="40"><div><h5>FAST DELIVERY</h5><p>Same-day dispatch on in-stock parts</p></div></li>
+                        <li class="rs-promise" data-key="money-back"><img src="images/ship-3.png" alt="" width="40" height="40"><div><h5>MONEY BACK</h5><p>30 days on unfitted parts</p></div></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="rs-shelves" data-section="shelves">
+                <div class="rs-wrap rs-shelves__in">
+                    <div class="rs-shelf" id="tv-product-new-arrival">
+                        <div class="rs-head">
+                            <h2>Latest Arrivals</h2>
+                            <a class="rs-more" href="product.html">All new parts <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="rs-shelfrow" data-owl='{"responsive":{"0":1,"480":2,"768":2,"992":2,"1200":2,"1600":2},"nav":false,"dots":true,"loop":false,"margin":24,"speed":700}'>
+                            <article class="rs-card" data-key="all-season-tire" data-fits="Toyota/Corolla/2014-2025; Volkswagen/Golf/2012-2025; Honda/Civic/2012-2025; Ford/Focus/2011-2025" data-name="All-Season Tire 205/55 R16" data-model="RS-TY-20555" data-price="110.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-TY-20555</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p1.jpg" alt="All-Season Tire 205/55 R16" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">All-Season Tire 205/55 R16</a></h4>
+                                    <p class="rs-card__desc">A quiet, long-wearing tire for year-round driving, with a 60,000-mile tread warranty and good grip in the wet.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$110.00</strong> <s class="rs-price-old">$122.00</s> <small class="rs-price-tax">Ex Tax: $90.00</small></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="adjustable-wrench" data-fits="all" data-name="Chrome Adjustable Wrench, 250 mm" data-model="RS-TL-0250" data-price="95.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-TL-0250</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/na1.jpg" alt="Chrome Adjustable Wrench, 250 mm" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Chrome Adjustable Wrench, 250 mm</a></h4>
+                                    <p class="rs-card__desc">Drop-forged chrome vanadium with a 30 mm jaw. Fine worm gear, so the jaw holds its setting on rounded nuts.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$95.00</strong> <s class="rs-price-old">$102.00</s> <small class="rs-price-tax">Ex Tax: $80.00</small></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="coilover-front" data-fits="Toyota/Corolla/2014-2019; Honda/Civic/2016-2021; Volkswagen/Golf/2013-2020" data-name="Adjustable Coilover, Front Pair" data-model="RS-SU-4180" data-price="130.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-SU-4180</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p2.jpg" alt="Adjustable Coilover, Front Pair" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Adjustable Coilover, Front Pair</a></h4>
+                                    <p class="rs-card__desc">Height and damping adjustable front pair. Lowers the car by up to 60 mm and ships with top mounts fitted.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$130.00</strong> <s class="rs-price-old">$152.00</s> <small class="rs-price-tax">Ex Tax: $95.00</small></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="rs-shelf" id="tv-product-featured">
+                        <div class="rs-head">
+                            <h2>Featured Products</h2>
+                            <a class="rs-more" href="product.html">All featured <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="rs-shelfrow" data-owl='{"responsive":{"0":1,"480":2,"768":2,"992":2,"1200":2,"1600":2},"nav":false,"dots":true,"loop":false,"margin":24,"speed":700}'>
+                            <article class="rs-card" data-key="sport-wheel" data-fits="Toyota/Corolla/2008-2025; Ford/Focus/2011-2018; Honda/Civic/2012-2021" data-name="Sport Steering Wheel, 350 mm" data-model="RS-ST-3500" data-price="110.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-ST-3500</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p3.jpg" alt="Sport Steering Wheel, 350 mm" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Sport Steering Wheel, 350 mm</a></h4>
+                                    <p class="rs-card__desc">Smaller 350 mm rim with a thicker grip for quicker steering. Needs the hub adapter listed for your car.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$110.00</strong> <s class="rs-price-old">$122.00</s> <small class="rs-price-tax">Ex Tax: $90.00</small></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="hand-tool-set" data-fits="all" data-name="Workshop Hand Tool Set, 3 Pieces" data-model="RS-TL-0003" data-price="105.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-TL-0003</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p4.jpg" alt="Workshop Hand Tool Set, 3 Pieces" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Workshop Hand Tool Set, 3 Pieces</a></h4>
+                                    <p class="rs-card__desc">Claw hammer, flat screwdriver and combination pliers with sealed grips. The three tools every glovebox kit should start with.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$105.00</strong> <s class="rs-price-old">$150.00</s> <small class="rs-price-tax">Ex Tax: $60.00</small></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="blue-stitch-wheel" data-fits="Volkswagen/Golf/2013-2020; BMW/3 Series/2012-2019; Ford/Fiesta/2009-2017" data-name="Leather Steering Wheel, Blue Stitch" data-model="RS-ST-3720" data-price="120.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-ST-3720</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p5.jpg" alt="Leather Steering Wheel, Blue Stitch" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Leather Steering Wheel, Blue Stitch</a></h4>
+                                    <p class="rs-card__desc">Perforated leather with a blue center stripe and stitching. Airbag-ready boss for the listed models.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$120.00</strong> <s class="rs-price-old">$142.00</s> <small class="rs-price-tax">Ex Tax: $98.00</small></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="rs-catalogue" data-section="catalogue" id="tv-product-view">
+                <div class="rs-wrap">
+                    <div class="rs-head rs-head--wide">
+                        <div>
+                            <h2>Our products</h2>
+                            <p>Every part carries its maker's number, so you can match it against the old one before you order. Pick a category or browse the counter's best sellers.</p>
+                        </div>
+                        <ul class="rs-chips" aria-label="Shop by category">
+                            <li data-key="batteries"><a href="product.html"><img src="images/Icon1.png" alt="" width="30" height="30">Batteries</a></li>
+                            <li data-key="wheels-tires"><a href="product.html"><img src="images/Icon4.png" alt="" width="37" height="37">Wheels &amp; tires</a></li>
+                            <li data-key="oils-fluids"><a href="product.html"><img src="images/Icon5.png" alt="" width="37" height="17">Oils &amp; fluids</a></li>
+                            <li data-key="tools"><a href="product.html"><img src="images/Icon3.png" alt="" width="28" height="26">Workshop tools</a></li>
+                            <li data-key="towing"><a href="product.html"><img src="images/Icon2.png" alt="" width="43" height="37">Towing &amp; recovery</a></li>
+                        </ul>
+                    </div>
+                    <div class="rs-shelfrow" data-owl='{"items":4,"responsive":{"0":1,"480":2,"768":2,"992":2,"1200":4,"1600":4},"nav":false,"dots":true,"loop":false,"margin":24,"speed":700}'>
+                            <article class="rs-card" data-key="performance-tire" data-fits="Volkswagen/Golf/2013-2025; BMW/1 Series/2012-2025; Ford/Focus/2011-2025; Honda/Civic/2016-2025" data-name="Performance Tire 225/45 R17" data-model="RS-TY-22545" data-price="110.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-TY-22545</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p1.jpg" alt="Performance Tire 225/45 R17" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Performance Tire 225/45 R17</a></h4>
+                                    <p class="rs-card__desc">Summer performance tire with a stiff shoulder for sharp turn-in and short dry braking distances.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$110.00</strong> <s class="rs-price-old">$122.00</s></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="rear-shock" data-fits="Ford/Focus/2011-2018; BMW/3 Series/2012-2019; Toyota/Corolla/2014-2019" data-name="Gas Shock Absorber, Rear" data-model="RS-SU-2210" data-price="105.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-SU-2210</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p2.jpg" alt="Gas Shock Absorber, Rear" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Gas Shock Absorber, Rear</a></h4>
+                                    <p class="rs-card__desc">Twin-tube gas shock built to original height. Replace in pairs to keep the car level and braking straight.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$105.00</strong> <s class="rs-price-old">$130.00</s></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="flat-bottom-wheel" data-fits="Honda/Civic/2012-2021; Volkswagen/Polo/2010-2017" data-name="Flat-Bottom Racing Wheel" data-model="RS-ST-3300" data-price="135.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-ST-3300</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p3.jpg" alt="Flat-Bottom Racing Wheel" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Flat-Bottom Racing Wheel</a></h4>
+                                    <p class="rs-card__desc">Flat-bottom rim for more knee room in a lowered seat. Suede-feel grip and a center marker at twelve o'clock.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$135.00</strong> <s class="rs-price-old">$155.00</s></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="starter-tool-kit" data-fits="all" data-name="Mechanic's Starter Tool Kit" data-model="RS-TL-0012" data-price="110.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-TL-0012</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p4.jpg" alt="Mechanic's Starter Tool Kit" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Mechanic's Starter Tool Kit</a></h4>
+                                    <p class="rs-card__desc">Twelve tools for oil changes, bulb swaps and battery work, in a roll-up case that fits under a seat.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$110.00</strong> <s class="rs-price-old">$122.00</s></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                            <article class="rs-card" data-key="quick-release-wheel" data-fits="BMW/1 Series/2012-2019; Toyota/Camry/2012-2017" data-name="Quick-Release Steering Wheel" data-model="RS-ST-3100" data-price="110.00">
+                                <div class="rs-card__media">
+                                    <span class="rs-card__pn">RS-ST-3100</span>
+                                    <a href="single-product.html" class="rs-card__img"><img src="images/p5.jpg" alt="Quick-Release Steering Wheel" width="294" height="391" loading="lazy"></a>
+                                    <div class="rs-card__acts">
+                                        <button class="rs-card__act" type="button" title="Add to Wish List" data-wish><i class="far fa-heart" aria-hidden="true"></i><span class="visually-hidden">Add to Wish List</span></button>
+                                        <button class="rs-card__act" type="button" title="Compare this Product" data-compare><i class="fas fa-right-left" aria-hidden="true"></i><span class="visually-hidden">Compare this Product</span></button>
+                                    </div>
+                                </div>
+                                <div class="rs-card__body">
+                                    <h4 class="rs-card__name"><a href="single-product.html">Quick-Release Steering Wheel</a></h4>
+                                    <p class="rs-card__desc">Snap-off hub for track days and theft deterrence. Comes with the quick-release boss and a locking pin.</p>
+                                    <p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p>
+                                    <div class="rs-card__price"><label>Price:</label> <strong class="rs-price">$110.00</strong> <s class="rs-price-old">$122.00</s></div>
+                                    <button class="rs-btn rs-btn--block btn-cart" type="button" data-add-cart>Add to Cart</button>
+                                </div>
+                            </article>
+                    </div>
+                </div>
+            </section>
+            <section class="rs-deals" data-section="deals">
+                <div class="rs-wrap rs-deals__grid">
+                    <a class="rs-deal rs-deal--photo" href="product.html" data-key="engine-service">
+                        <img src="images/adv1.jpg" alt="Mechanic servicing an engine" width="570" height="500" loading="lazy">
+                        <span class="rs-deal__tag">Engine service</span>
+                        <span class="rs-deal__copy"><strong>Up to 50% off</strong> belts, filters and gaskets this month</span>
+                    </a>
+                    <a class="rs-deal" href="product.html" data-key="brakes">
+                        <img src="images/Image 9.png" alt="Brake drum assembly" width="85" height="83" loading="lazy">
+                        <span class="rs-deal__tag">Brakes</span>
+                        <span class="rs-deal__copy"><strong>Pads, rotors and drums</strong> from $29 a set</span>
+                    </a>
+                    <a class="rs-deal" href="product.html" data-key="tires">
+                        <img src="images/Image 4.png" alt="Stack of car tires" width="93" height="83" loading="lazy">
+                        <span class="rs-deal__tag">Tires</span>
+                        <span class="rs-deal__copy"><strong>Buy four, fit free</strong> at partner garages</span>
+                    </a>
+                    <a class="rs-deal rs-deal--wide" href="product.html" data-key="lighting">
+                        <img src="images/Image 5.png" alt="Pair of car headlamps" width="103" height="84" loading="lazy">
+                        <span class="rs-deal__tag">Lighting</span>
+                        <span class="rs-deal__copy"><strong>Headlamps, bulbs and LED kits</strong> matched to your model</span>
+                    </a>
+                </div>
+            </section>
+            <section class="rs-subscribe" data-section="subscribe">
+                <div class="rs-wrap rs-subscribe__in">
+                    <div class="rs-subscribe__copy">
+                        <h3><span>Special Offers</span> For Subscribers</h3>
+                        <h4>One short email on Fridays with the week's price drops</h4>
+                        <p>Subscribe to our newsletter and stay up to date with new parts, seasonal checklists and offers kept for subscribers.</p>
+                    </div>
+                    <form class="rs-subscribe__form" name="subscribe" id="tv-subscribe" aria-label="Newsletter sign-up" data-form novalidate>
+                        <label for="subscribe_email">Email address</label>
+                        <div class="rs-subscribe__row">
+                            <input name="subscribe_email" id="subscribe_email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                            <button class="rs-btn" type="submit">Subscribe</button>
+                        </div>
+                        <p class="rs-form-note" data-form-ok tabindex="-1" hidden><i class="fas fa-circle-check" aria-hidden="true"></i> You're on the list. The first email arrives on Friday.</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+        </main>
+            <footer class="rs-footer" data-section="footer">
+                <div class="rs-wrap">
+                    <div class="rs-receipt">
+                        <div class="rs-receipt__head">
+                            <a class="rs-receipt__logo" href="index.html"><img src="images/logo.png" alt="Rawstuf" width="200" height="34" loading="lazy"></a>
+                            <p class="rs-receipt__meta"><span>Parts counter</span><span>Mon&ndash;Sat 8:00&ndash;18:00</span><span><a href="tel:+18005550142">1-800-555-0142</a></span></p>
+                        </div>
+                        <div class="rs-receipt__cols">
+                            <div class="rs-receipt__col rs-receipt__col--about">
+                                <div class="rs-receipt__title">about us</div>
+                                <p>Rawstuf is an independent parts counter for everyday cars. We check every part against your car before it ships, so the box you open holds the part you need.
+                                    <a href="about.html">Read more</a></p>
+                                <div class="rs-social">
+                                    <span>Follow us on social:</span>
+                                    <ul>
+                                        <li data-key="facebook"><a href="https://www.facebook.com/" title="Facebook" aria-label="Rawstuf on Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li data-key="instagram"><a href="https://www.instagram.com/" title="Instagram" aria-label="Rawstuf on Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li data-key="youtube"><a href="https://www.youtube.com/" title="YouTube" aria-label="Rawstuf fitting guides on YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                                        <li data-key="x"><a href="https://x.com/" title="X" aria-label="Rawstuf on X" target="_blank" rel="noopener"><i class="fab fa-x-twitter" aria-hidden="true"></i></a></li>
+                                        <li data-key="whatsapp"><a href="https://wa.me/18005550142" title="WhatsApp the parts desk" aria-label="WhatsApp the parts desk" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rs-receipt__col">
+                                <div class="rs-receipt__title">Information</div>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="delivery-returns.html">Delivery Information</a></li>
+                                    <li><a href="delivery-returns.html#privacy">Privacy Policy</a></li>
+                                    <li><a href="delivery-returns.html#terms">Terms &amp; Conditions</a></li>
+                                </ul>
+                            </div>
+                            <div class="rs-receipt__col">
+                                <div class="rs-receipt__title">Customer Service</div>
+                                <ul>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="delivery-returns.html#returns">Returns</a></li>
+                                    <li><a href="about.html#sitemap">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="rs-receipt__col">
+                                <div class="rs-receipt__title">Extras</div>
+                                <ul>
+                                    <li><a href="product.html">Brands</a></li>
+                                    <li><a href="cart.html">Gift Certificates</a></li>
+                                    <li><a href="contact.html">Affiliate</a></li>
+                                    <li><a href="product.html">Specials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rs-receipt__foot">
+                            <span class="rs-receipt__code" aria-hidden="true"></span>
+                            <p class="copyright">&copy; <span id="tv-year">2026</span> Rawstuf. All rights reserved. Designed by <a href="https://www.themevault.net/rawstuf-auto-parts-website-template" target="_blank" rel="noopener">ThemeVault</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="back-to-top" aria-label="Back to top"><i class="fas fa-angle-up" aria-hidden="true"></i></button>
+
+
+        <script src="js/bootstrap.bundle.min.js" defer></script>
+        <script src="js/vehicles.js" defer></script>
+        <script src="js/main.js" defer></script>
+    </body>
+</html>

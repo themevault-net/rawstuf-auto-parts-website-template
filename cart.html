@@ -1,0 +1,308 @@
+<!--
+Template Name: rawstuf
+File Name: cart.html
+Author Name: ThemeVault
+Author URI: https://www.themevault.net/
+License URI: https://www.themevault.net/license/
+Version: 2.0
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>rawstuf</title>
+        <meta name="description" content="Shopping cart with quantities, coupon and gift certificate codes, and a shipping and tax estimate.">
+        <link rel="icon" href="images/favicon.png"/>
+
+        <!-- Bootstrap 5, Font Awesome 6, then v1's own stylesheets in v1's order -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bs3-defaults.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <link href="css/bs5-shim.css" rel="stylesheet">
+        <link href="css/_modern.css" rel="stylesheet">
+        <link href="css/design.css" rel="stylesheet">
+    </head>
+    <body class="tv-preload rs-inner" id="myPage">
+
+        <header class="rs-header" data-section="header">
+            <div class="rs-topbar">
+                <div class="rs-wrap rs-topbar__in">
+                    <div class="rs-topbar__picks">
+                        <div class="dropdown rs-pick">
+                            <button class="rs-pick__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe" aria-hidden="true"></i> <span class="rs-pick__lbl">Language:</span> English</button>
+                            <ul class="dropdown-menu rs-menu">
+                                <li><button class="dropdown-item language-select" type="button" name="en-gb">English</button></li>
+                                <li><button class="dropdown-item language-select" type="button" name="ar">Arabic</button></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown rs-pick">
+                            <button class="rs-pick__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><strong>$</strong> <span class="rs-pick__lbl">Currency:</span> USD</button>
+                            <ul class="dropdown-menu rs-menu">
+                                <li><button class="dropdown-item currency-select" type="button" name="EUR">&euro; Euro</button></li>
+                                <li><button class="dropdown-item currency-select" type="button" name="GBP">&pound; Pound Sterling</button></li>
+                                <li><button class="dropdown-item currency-select" type="button" name="USD">$ US Dollar</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="rs-topbar__note"><i class="fas fa-truck-fast" aria-hidden="true"></i> Free delivery on orders over $75 &middot; Parts desk <a href="tel:+18005550142">1-800-555-0142</a></p>
+                </div>
+            </div>
+            <div class="rs-bar">
+                <div class="rs-wrap rs-bar__in">
+                    <a class="rs-logo" href="index.html"><img src="images/logo.png" alt="Rawstuf" width="200" height="34"></a>
+                    <form class="rs-search" id="header-search" name="header-search" action="product.html" role="search" aria-label="Search parts">
+                        <label class="visually-hidden" for="rs-search-q">Search parts</label>
+                        <input id="rs-search-q" name="search" type="search" placeholder="Part name, part number or brand" autocomplete="off">
+                        <button type="submit" aria-label="Search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><span>Search</span></button>
+                    </form>
+                    <div class="rs-actions">
+                        <a class="rs-garage" href="index.html#finder" data-garage-chip>
+                            <i class="fas fa-car-side" aria-hidden="true"></i>
+                            <span class="rs-garage__txt"><small>My garage</small><strong data-garage-name>Add your car</strong></span>
+                        </a>
+                        <a class="rs-icon" href="login.html" id="wishlist-total" title="Wish List (0)" aria-label="Wish list, 0 items"><i class="far fa-heart" aria-hidden="true"></i><span class="rs-count" data-wish-count>0</span></a>
+                        <div class="dropdown rs-acct">
+                            <button class="rs-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="My account"><i class="far fa-user" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-end rs-menu">
+                                <li><a class="dropdown-item" href="register.html">Register</a></li>
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown rs-cart">
+                            <button class="rs-cart__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fas fa-basket-shopping" aria-hidden="true"></i> <span id="cart-total"><span class="rs-cart__n" data-cart-count>1</span><span class="rs-cart__txt"> item(s) - <span data-cart-sum>$242.00</span></span></span></button>
+                            <div class="dropdown-menu dropdown-menu-end rs-minicart">
+                                <ul class="rs-minicart__list">
+                                    <li class="rs-minicart__row">
+                                        <a href="single-product.html"><img src="images/p1.jpg" alt="All-Season Tire 205/55 R16" width="56" height="74"></a>
+                                        <span class="rs-minicart__name"><a href="single-product.html">All-Season Tire 205/55 R16</a><small>x 1</small></span>
+                                        <span class="rs-minicart__price">$242.00</span>
+                                        <button type="button" class="rs-minicart__rm" title="Remove" aria-label="Remove All-Season Tire from cart"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+                                    </li>
+                                </ul>
+                                <dl class="rs-minicart__sums">
+                                    <dt>Sub-Total</dt><dd>$200.00</dd>
+                                    <dt>Eco Tax (-2.00)</dt><dd>$2.00</dd>
+                                    <dt>VAT (20%)</dt><dd>$40.00</dd>
+                                    <dt class="rs-minicart__total">Total</dt><dd class="rs-minicart__total">$242.00</dd>
+                                </dl>
+                                <div class="rs-minicart__go">
+                                    <a class="rs-btn rs-btn--line" href="cart.html"><i class="fas fa-cart-shopping" aria-hidden="true"></i> View Cart</a>
+                                    <a class="rs-btn" href="cart.html"><i class="fas fa-share" aria-hidden="true"></i> Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="rs-burger navbar-toggler" data-bs-toggle="collapse" data-bs-target="#rs-cats" aria-controls="rs-cats" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars" aria-hidden="true"></i><span>Parts</span></button>
+                    </div>
+                </div>
+            </div>
+            <nav class="rs-cats navbar" aria-label="Part categories">
+                <div class="rs-wrap">
+                    <div class="collapse navbar-collapse" id="rs-cats">
+                        <ul class="nav navbar-nav rs-cats__list">
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-circle-dot" aria-hidden="true"></i>Brakes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-link" aria-hidden="true"></i>Cables</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-gear" aria-hidden="true"></i>Clutch</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-temperature-low" aria-hidden="true"></i>Cooling</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-car-battery" aria-hidden="true"></i>Electrics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-oil-can" aria-hidden="true"></i>Engine</a></li>
+                            <li class="nav-item"><a class="nav-link" href="product.html"><i class="fas fa-wind" aria-hidden="true"></i>Exhaust</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main id="rs-main">
+        <div id="checkout-cart">
+            <section class="rs-banner" data-section="banner">
+                <div class="rs-wrap rs-banner__in">
+                    <nav class="rs-crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Shopping Cart</span></nav>
+                    <h1 class="rs-banner__title">Shopping Cart&nbsp;(9.20kg)</h1>
+                    <p class="rs-banner__lede">Check quantities and the fit line before you head to checkout.</p>
+                </div>
+            </section>
+            <section class="rs-cart-page" data-section="cart">
+                <div class="rs-wrap">
+                    <form class="rs-cart-table" name="cart" aria-label="Cart items">
+                        <table class="rs-table">
+                            <thead>
+                                <tr><th scope="col">Image</th><th scope="col">Product Name</th><th scope="col">Model</th><th scope="col">Quantity</th><th scope="col">Unit Price</th><th scope="col">Total</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr data-key="all-season-tire" data-fits="Toyota/Corolla/2014-2025; Volkswagen/Golf/2012-2025; Honda/Civic/2012-2025; Ford/Focus/2011-2025">
+                                    <td data-label="Image"><a href="single-product.html"><img src="images/p1.jpg" alt="All-Season Tire 205/55 R16" width="72" height="96"></a></td>
+                                    <td data-label="Product Name"><a href="single-product.html">All-Season Tire 205/55 R16</a><small class="rs-mono rs-cart-meta">Reward Points: 300</small><p class="rs-fit" data-fit><i class="fas fa-circle-check" aria-hidden="true"></i><span data-fit-text>Add your car to check fit</span></p></td>
+                                    <td data-label="Model"><span class="rs-mono">RS-TY-20555</span></td>
+                                    <td data-label="Quantity">
+                                        <div class="rs-cart-qty">
+                                            <label class="visually-hidden" for="cart-qty-1">Quantity</label>
+                                            <input type="text" name="quantity[46]" id="cart-qty-1" value="1" size="1" inputmode="numeric">
+                                            <button type="button" class="rs-cart-qty__btn" title="Update" aria-label="Update quantity"><i class="fas fa-rotate" aria-hidden="true"></i></button>
+                                            <button type="button" class="rs-cart-qty__btn rs-cart-qty__btn--rm" title="Remove" aria-label="Remove from cart"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+                                        </div>
+                                    </td>
+                                    <td data-label="Unit Price">$122.00</td>
+                                    <td data-label="Total"><strong>$122.00</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    <div class="rs-cart-page__grid">
+                        <div class="rs-cart-next">
+                            <h2>What would you like to do next?</h2>
+                            <p>Choose if you have a discount code or reward points you want to use, or would like to estimate your delivery cost.</p>
+                            <div class="accordion rs-acc" id="accordion">
+                                <div class="rs-acc__item">
+                                    <h4><button class="rs-acc__btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-coupon" aria-expanded="false" aria-controls="collapse-coupon">Use Coupon Code</button></h4>
+                                    <div id="collapse-coupon" class="collapse" data-bs-parent="#accordion">
+                                        <form class="rs-acc__body rs-inline" name="coupon" aria-label="Coupon code" data-form novalidate>
+                                            <label for="input-coupon">Enter your coupon here</label>
+                                            <div class="rs-inline__row"><input type="text" name="coupon" id="input-coupon" placeholder="Enter your coupon here" required><button type="submit" id="button-coupon" class="rs-btn">Apply Coupon</button></div>
+                                            <p class="rs-form-note" data-form-ok tabindex="-1" hidden>Coupon checked. The discount shows at checkout.</p>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="rs-acc__item">
+                                    <h4><button class="rs-acc__btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-shipping" aria-expanded="false" aria-controls="collapse-shipping">Estimate Shipping &amp; Taxes</button></h4>
+                                    <div id="collapse-shipping" class="collapse" data-bs-parent="#accordion">
+                                        <form class="rs-acc__body rs-form-grid" name="shipping-estimate" aria-label="Estimate shipping" data-form novalidate>
+                                            <p class="rs-form-grid__full">Enter your destination to get a shipping estimate.</p>
+                                            <div class="rs-field">
+                                                <label for="input-country">Country</label>
+                                                <select name="country_id" id="input-country" required>
+                                                    <option value="">--- Please Select ---</option>
+                                                    <option value="244">Aaland Islands</option>
+                                                    <option value="1">Afghanistan</option>
+                                                    <option value="2">Albania</option>
+                                                    <option value="3">Algeria</option>
+                                                    <option value="4">American Samoa</option>
+                                                    <option value="5">Andorra</option>
+                                                    <option value="6">Angola</option>
+                                                    <option value="38">Canada</option>
+                                                    <option value="222">United Kingdom</option>
+                                                    <option value="223" selected>United States</option>
+                                                </select>
+                                            </div>
+                                            <div class="rs-field">
+                                                <label for="input-zone">Region / State</label>
+                                                <select name="zone_id" id="input-zone" required>
+                                                    <option value="">--- Please Select ---</option>
+                                                    <option>Aberdeen</option>
+                                                    <option>Aberdeenshire</option>
+                                                    <option>Anglesey</option>
+                                                    <option>Angus</option>
+                                                    <option>Argyll and Bute</option>
+                                                    <option>Bedfordshire</option>
+                                                    <option>Berkshire</option>
+                                                    <option>Blaenau Gwent</option>
+                                                    <option>Bridgend</option>
+                                                    <option>Bristol</option>
+                                                    <option>California</option>
+                                                    <option>New York</option>
+                                                    <option>Texas</option>
+                                                </select>
+                                            </div>
+                                            <div class="rs-field">
+                                                <label for="input-postcode">Post Code</label>
+                                                <input type="text" name="postcode" id="input-postcode" placeholder="Post Code" autocomplete="postal-code" required>
+                                            </div>
+                                            <button type="submit" id="button-quote" class="rs-btn">Get Quotes</button>
+                                            <p class="rs-form-note rs-form-grid__full" data-form-ok tabindex="-1" hidden>Standard delivery: $9.95, 2&ndash;4 working days. Free on orders over $75.</p>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="rs-acc__item" id="gift">
+                                    <h4><button class="rs-acc__btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-voucher" aria-expanded="false" aria-controls="collapse-voucher">Use Gift Certificate</button></h4>
+                                    <div id="collapse-voucher" class="collapse" data-bs-parent="#accordion">
+                                        <form class="rs-acc__body rs-inline" name="voucher" aria-label="Gift certificate" data-form novalidate>
+                                            <label for="input-voucher">Enter your gift certificate code here</label>
+                                            <div class="rs-inline__row"><input type="text" name="voucher" id="input-voucher" placeholder="Enter your gift certificate code here" required><button type="submit" id="button-voucher" class="rs-btn">Apply Gift Certificate</button></div>
+                                            <p class="rs-form-note" data-form-ok tabindex="-1" hidden>Gift certificate applied to this order.</p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rs-totals">
+                            <dl>
+                                <dt>Sub-Total:</dt><dd>$100.00</dd>
+                                <dt>Eco Tax (-2.00):</dt><dd>$2.00</dd>
+                                <dt>VAT (20%):</dt><dd>$20.00</dd>
+                                <dt class="rs-totals__grand">Total:</dt><dd class="rs-totals__grand">$122.00</dd>
+                            </dl>
+                            <a class="rs-btn rs-btn--big rs-btn--block" href="checkout.html">Place Order</a>
+                            <a class="rs-btn rs-btn--line rs-btn--block" href="product.html">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        </main>
+            <footer class="rs-footer" data-section="footer">
+                <div class="rs-wrap">
+                    <div class="rs-receipt">
+                        <div class="rs-receipt__head">
+                            <a class="rs-receipt__logo" href="index.html"><img src="images/logo.png" alt="Rawstuf" width="200" height="34" loading="lazy"></a>
+                            <p class="rs-receipt__meta"><span>Parts counter</span><span>Mon&ndash;Sat 8:00&ndash;18:00</span><span><a href="tel:+18005550142">1-800-555-0142</a></span></p>
+                        </div>
+                        <div class="rs-receipt__cols">
+                            <div class="rs-receipt__col rs-receipt__col--about">
+                                <div class="rs-receipt__title">about us</div>
+                                <p>Rawstuf is an independent parts counter for everyday cars. We check every part against your car before it ships, so the box you open holds the part you need.
+                                    <a href="about.html">Read more</a></p>
+                                <div class="rs-social">
+                                    <span>Follow us on social:</span>
+                                    <ul>
+                                        <li data-key="facebook"><a href="https://www.facebook.com/" title="Facebook" aria-label="Rawstuf on Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li data-key="instagram"><a href="https://www.instagram.com/" title="Instagram" aria-label="Rawstuf on Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li data-key="youtube"><a href="https://www.youtube.com/" title="YouTube" aria-label="Rawstuf fitting guides on YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                                        <li data-key="x"><a href="https://x.com/" title="X" aria-label="Rawstuf on X" target="_blank" rel="noopener"><i class="fab fa-x-twitter" aria-hidden="true"></i></a></li>
+                                        <li data-key="whatsapp"><a href="https://wa.me/18005550142" title="WhatsApp the parts desk" aria-label="WhatsApp the parts desk" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rs-receipt__col">
+                                <div class="rs-receipt__title">Information</div>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="delivery-returns.html">Delivery Information</a></li>
+                                    <li><a href="delivery-returns.html#privacy">Privacy Policy</a></li>
+                                    <li><a href="delivery-returns.html#terms">Terms &amp; Conditions</a></li>
+                                </ul>
+                            </div>
+                            <div class="rs-receipt__col">
+                                <div class="rs-receipt__title">Customer Service</div>
+                                <ul>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="delivery-returns.html#returns">Returns</a></li>
+                                    <li><a href="about.html#sitemap">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="rs-receipt__col">
+                                <div class="rs-receipt__title">Extras</div>
+                                <ul>
+                                    <li><a href="product.html">Brands</a></li>
+                                    <li><a href="cart.html">Gift Certificates</a></li>
+                                    <li><a href="contact.html">Affiliate</a></li>
+                                    <li><a href="product.html">Specials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rs-receipt__foot">
+                            <span class="rs-receipt__code" aria-hidden="true"></span>
+                            <p class="copyright">&copy; <span id="tv-year">2026</span> Rawstuf. All rights reserved. Designed by <a href="https://www.themevault.net/rawstuf-auto-parts-website-template" target="_blank" rel="noopener">ThemeVault</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="back-to-top" aria-label="Back to top"><i class="fas fa-angle-up" aria-hidden="true"></i></button>
+
+
+        <script src="js/bootstrap.bundle.min.js" defer></script>
+        <script src="js/vehicles.js" defer></script>
+        <script src="js/main.js" defer></script>
+    </body>
+</html>

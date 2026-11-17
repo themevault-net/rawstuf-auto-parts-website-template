@@ -1,0 +1,19 @@
+Rawstuf - Auto Parts Website Template
+=====================================
+
+Version 2.0 (October 2026)
+- New "Fitment Counter" design: Chakra Petch, Hind and Space Mono type, a warm-white and charcoal palette built on Rawstuf's red, square buttons and a parts-receipt footer
+- Find parts by year, make and model, with an optional license plate search; the car is saved to "My garage" and every product shows whether it fits
+- Fitment data by make, model and year range on every product, and the vehicle list in its own js/vehicles.js file
+- Six new pages: checkout, order confirmation, contact, about (team and site map), delivery and returns (with privacy and terms) and a 404 page
+- Six HTML emails: order confirmation, newsletter welcome, account welcome, review received, contact auto-reply and password reset
+- Every form works: labels, validation and success messages, including product reviews, register, login, forgotten password, coupon, shipping estimate and gift certificate
+- Product listing with category filters, sorting, a fit-only filter, grid and list views, and a filters panel on phones
+- Product page with gallery, part number, trade pricing, quantity stepper, specification table, reviews and related parts
+- Real auto-parts copy replaces the placeholder text; product names, specs and the account menu rewritten for a parts shop
+- Upgraded to Bootstrap 5 and Font Awesome 6; jQuery and Owl Carousel replaced with plain JavaScript; fonts hosted locally
+- Rebuilt for tablet and phone, with two-column tablet layouts and touch-friendly controls
+- Meta descriptions on every page and one H1 per page
+
+Version 1.0
+- Initial release
