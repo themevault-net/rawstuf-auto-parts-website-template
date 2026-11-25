@@ -22,8 +22,6 @@ Version: 2.0
    Bootstrap 5 control. Root back to 16px; body copy pinned in px below. */
 html { font-size: 16px; }
 body { font-size: inherit; }
-
-/* ---- v1 style.css, verbatim below this line ---- */
 /* FONTS*/
 
 

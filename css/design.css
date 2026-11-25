@@ -1,4 +1,4 @@
-/* Rawstuf 2.0 design layer — "Fitment Counter". Loaded last. Design tokens (colours, fonts, radii, spacing) in :root below. */
+/* Loaded last. Design tokens (colours, fonts, radii, spacing) in :root below. */
 @font-face { font-family: "Chakra Petch"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/chakra-petch/chakra-petch-500-latin.woff2") format("woff2"); }
 @font-face { font-family: "Chakra Petch"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/chakra-petch/chakra-petch-600-latin.woff2") format("woff2"); }
 @font-face { font-family: "Chakra Petch"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/chakra-petch/chakra-petch-700-latin.woff2") format("woff2"); }
@@ -10,11 +10,11 @@
 
 /* ===== Tokens ===== */
 :root {
-    --rs-red: #e3262b;          /* v1's #ee3333, deepened a touch for white text */
-    --rs-red-hot: #ee3333;      /* v1's accent, kept for hovers and marks */
+    --rs-red: #e3262b;
+    --rs-red-hot: #ee3333;
     --rs-red-deep: #b9181d;
     --rs-ink: #1d1d23;
-    --rs-char: #23232c;         /* v1's heading colour, now the panel colour */
+    --rs-char: #23232c;
     --rs-char-2: #2e2e39;
     --rs-paper: #f5f2eb;        /* warm counter white */
     --rs-card: #ffffff;
@@ -32,8 +32,6 @@
     --rs-gap: clamp(16px, 2.4vw, 28px);
     --rs-band: clamp(56px, 7vw, 96px);
 }
-
-/* ===== Base: the design's own type and colour over v1's ===== */
 html { font-size: 16px; }
 body { font-family: var(--rs-text); font-size: 16px; line-height: 1.55; color: var(--rs-ink); background: var(--rs-paper); }
 h1, h2, h3, h4, h5, h6 { font-family: var(--rs-display); color: var(--rs-ink); letter-spacing: -0.01em; line-height: 1.15; }
@@ -123,7 +121,6 @@ img { max-width: 100%; height: auto; }
 .rs-burger:hover, .rs-burger[aria-expanded="true"] { background: var(--rs-ink); color: #fff; }
 
 .rs-cats { padding: 0; background: var(--rs-card); border-top: 1px solid var(--rs-line); }
-/* v1's Bootstrap 3 .navbar defaults (min-height 50px, margin-bottom 20px) left an empty band under the header */
 .rs-cats.navbar { min-height: 0; margin-bottom: 0; }
 .rs-cats .rs-wrap { display: block; }
 .rs-cats__list { display: flex; flex-wrap: wrap; gap: 0; margin: 0; padding: 0; list-style: none; flex-direction: row; }
@@ -174,7 +171,6 @@ img { max-width: 100%; height: auto; }
 .rs-show .carousel-inner, .rs-show__slide { height: 100%; }
 .rs-show { border-radius: 6px; overflow: hidden; background: var(--rs-char); }
 .rs-show .carousel-inner > .rs-show__slide > img { width: 100%; max-width: none; height: 100%; object-fit: cover; display: block; }
-/* adv1.jpg carries v1's printed promo text in its top third: the photo is scaled from the bottom so that band stays out of frame */
 .rs-show__slide--low { position: relative; overflow: hidden; }
 .rs-show .carousel-inner > .rs-show__slide--low > img { position: absolute; left: 0; bottom: 0; height: 160%; object-position: center bottom; }
 .rs-show__slide--cut { background: radial-gradient(circle at 60% 40%, #3a3a46, var(--rs-char) 70%); }
@@ -507,7 +503,6 @@ img { max-width: 100%; height: auto; }
 /* product page */
 .rs-pdp { padding: clamp(28px, 4vw, 52px) 0; }
 .rs-pdp__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); align-items: start; }
-/* white stage + square tiles: v1's product photos come on white, grey and transparent grounds, so one white ground makes them match */
 .rs-gallery__main { position: relative; background: #fff; border: 1px solid var(--rs-line); border-radius: 6px; aspect-ratio: 1 / 1; display: grid; place-items: center; overflow: hidden; padding: 6%; }
 .rs-gallery__main img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
 .rs-gallery__thumbs { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }

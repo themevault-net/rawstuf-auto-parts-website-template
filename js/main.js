@@ -26,15 +26,12 @@ used to do.
         });
     }
 
-    /* BS3 marked the active tab on the <li>; BS5 marks the <a>. Templates key CSS on li.active (flowerspetal, wrap-d-style) — keep both in step */
-    /* BS3's tab plugin worked from any trigger; BS5's needs a .nav / .list-group / [role=tablist] ancestor or it silently does nothing
-       (homeapart: eight grid columns switch the portfolio panes). Give such triggers their nearest .row as the tablist. */
+    /* Tabs: Bootstrap needs a tab list around its triggers, so triggers placed in a grid use their row as the list. */
     document.querySelectorAll('[data-bs-toggle="tab"], [data-bs-toggle="pill"]').forEach(function (t) {
         if (t.closest('.nav, .list-group, [role="tablist"]')) return;
         var host = t.closest(".row") || t.parentElement.parentElement; if (host && !host.getAttribute("role")) host.setAttribute("role", "tablist");
     });
-    /* BS5's scrollspy marks the <a>.active and colours it at (0,3,0) — above a template's ".navbar-default .navbar-nav > li > a" (0,2,2), so
-       the spied item went grey (homeapart's "About" on the tablet). BS3 marked the <li>; do the same and take the class off the <a>. */
+    /* Scrollspy and tabs: mark the active item on its list item, so the menu styles colour it. */
     document.addEventListener("activate.bs.scrollspy", function (e) {
         var a = e.relatedTarget; if (!a || !a.closest) return;
         var ul = a.closest(".navbar-nav, .nav, ul"); if (ul) ul.querySelectorAll("li.active").forEach(function (li) { li.classList.remove("active"); });
@@ -42,8 +39,7 @@ used to do.
         a.classList.remove("active");
     });
     document.addEventListener("shown.bs.tab", function (e) { var a = e.target, ul = a.closest('.nav, [role="tablist"]'); if (!ul) return; ul.querySelectorAll("li").forEach(function (li) { li.classList.remove("active"); }); ul.querySelectorAll("[data-bs-toggle]").forEach(function (t) { if (t !== a) t.classList.remove("active"); }); var li = a.closest("li"); if (li) li.classList.add("active"); });
-    /* BS3 marked an open dropdown's parent with .open; BS5 uses .show. Templates
-       key CSS on .open (wrap-d-style slides its cart panel in on it) — mirror it. */
+    /* An open dropdown also gets .open on its parent, for styles that use it. */
     document.addEventListener("shown.bs.dropdown", function (e) { var p = e.target.closest(".dropdown, .btn-group, .dropup") || e.target.parentElement; if (p) p.classList.add("open"); });
     document.addEventListener("hidden.bs.dropdown", function (e) { var p = e.target.closest(".dropdown, .btn-group, .dropup") || e.target.parentElement; if (p) p.classList.remove("open"); });
 
@@ -61,21 +57,7 @@ used to do.
             if (inst) inst.hide();
         });
     }
-    /* ------------------------------------------------------------------
-       Carousels — replaces Owl Carousel (and jQuery with it). Shared block
-       from web/scripts/upgrade-qa2/lib/js/carousel.js.
-
-       Config travels on data-owl, lifted from v1's inline $.owlCarousel()
-       call, e.g. data-owl='{"items":1,"dots":true,"loop":true,"autoplay":4000}':
-         items / responsive   how many show at each MIN width ({"0":1,"768":2})
-         nav, dots            arrows (navHtml for custom markup) / pager
-         loop                 wrap around — with CLONES, as Owl does
-         speed                transition in ms (Owl's 250 default)
-         autoplay             interval in ms, or falsy for none
-       The plugin's STYLESHEET (owl.carousel.css / owl.theme.default.css) is
-       kept verbatim because it IS the slider's design — Owl built the
-       stage/item DOM at runtime; this builds the same DOM.
-       ------------------------------------------------------------------ */
+    /* Carousels — replaces Owl Carousel (and jQuery with it). */
     document.querySelectorAll("[data-owl]").forEach(function (root) {
         var cfg;
         try { cfg = JSON.parse(root.getAttribute("data-owl")); } catch (e) { return; }
@@ -91,7 +73,7 @@ used to do.
         outer.appendChild(stage);
 
         var wrap = function (el, cloned) {
-            /* a template that hand-wrote <div class="owl-item"> around each slide (wrap-d-style's thumbnails) is not wrapped twice */
+            /* a template that hand-wrote <div class="owl-item"> around each slide is not wrapped twice */
             if (el.classList && el.classList.contains("owl-item")) { if (cloned) { el.classList.add("cloned"); el.setAttribute("aria-hidden", "true"); } return el; }
             var item = document.createElement("div");
             item.className = "owl-item" + (cloned ? " cloned" : "");
@@ -114,11 +96,7 @@ used to do.
 
         var nav = document.createElement("div"), navBtn = {};
         nav.className = "owl-nav" + (cfg.nav ? "" : " disabled");
-        /* Owl 2 rendered the arrows as <div class="owl-prev"> (a template's CSS
-           keys on `.owl-nav > div`, wrap-d-style on `div.owl2-prev`) and let
-           navClass / navText rename and fill them. Same here: a <div
-           role=button> when the template's CSS wants a div, its own class
-           names, its own text — a11y kept with tabindex + Enter/Space. */
+        /* Owl 2 rendered the arrows as <div class="owl-prev"> and let navClass / navText rename and fill them. Same here: a <div role=button> when the template's CSS wants a div, its own class names, its own text — a11y kept with tabindex + Enter/Space. */
         ["prev", "next"].forEach(function (dir, i) {
             var b = document.createElement(cfg.navTag || "div");
             if (b.tagName === "BUTTON") b.type = "button"; else { b.setAttribute("role", "button"); b.tabIndex = 0; }
@@ -127,7 +105,7 @@ used to do.
             var text = cfg.navText && cfg.navText[i];
             b.innerHTML = (cfg.navHtml && cfg.navHtml[dir]) || (typeof text === "string" ? text : '<i class="fas fa-angle-' + (dir === "prev" ? "left" : "right") + '" aria-hidden="true"></i>');
             var fire = function () { go(dir === "next" ? 1 : -1); restartAutoplay(); };
-            b.addEventListener("click", function () { fire(); if (b.tagName !== "BUTTON") b.blur(); }); /* a focusable div keeps a template's :focus (hover) look after a mouse click — v1's divs were not focusable */
+            b.addEventListener("click", function () { fire(); if (b.tagName !== "BUTTON") b.blur(); });
             b.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fire(); } });
             nav.appendChild(b); navBtn[dir] = b;
         });
@@ -135,7 +113,7 @@ used to do.
 
         var dots = document.createElement("div");
         dots.className = (cfg.dotsClass || "owl-dots") + (cfg.dots ? "" : " disabled");
-        if (cfg.dots) root.appendChild(dots); /* Owl built no pager at dots:false; a custom dotsClass would otherwise miss owl.theme's .owl-dots.disabled and show two stray dashes (wrap-d-style) */
+        if (cfg.dots) root.appendChild(dots); /* Owl built no pager at dots:false; a custom dotsClass would otherwise miss owl.theme's .owl-dots.disabled and show two stray dashes */
 
         var perView = function () {
             var w = window.innerWidth, n = cfg.items || 1;
@@ -248,9 +226,8 @@ used to do.
         }
     });
 
-    /* A static template posts nowhere, so rather than pretend, validate and
-       say so plainly. */
-    var form = document.querySelector("form.tv-contact-form"); /* form. — a template's own wrapper <div class="tv-contact-form"> (cunsultix contact.html) is not a form */
+    /* Contact form: check the fields, then show the thank-you message. Connect it to your own form handler or email service to receive messages. */
+    var form = document.querySelector("form.tv-contact-form");
     if (form) {
         form.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -265,9 +242,7 @@ used to do.
 /* Footer year */
 (function () { var y = document.getElementById("tv-year"); if (y) y.textContent = String(new Date().getFullYear()); })();
 
-/* No transitions on first paint, and no :hover-driven menus until the visitor moves: a browser can paint the new page with the cursor
-   already resting on a nav item, so a hover-opened mega menu or cart panel shows for a moment and then animates shut
-   (wrap-d-style, owner note 16). tv-preload drops transitions; tv-nohover keeps hover menus closed until the first real input. */
+/* No transitions while the page loads, and hover menus stay closed until the visitor moves the mouse or touches the screen, so a menu under a resting cursor doesn't flash open on page load. */
 (function () {
     var body = document.body; body.classList.add("tv-nohover");
     var go = function () { requestAnimationFrame(function () { body.classList.remove("tv-preload"); }); };
@@ -419,7 +394,7 @@ used to do.
         });
     });
 
-    /* product gallery (v1: clicking a .tv-current-img thumbnail puts its src on .tv-replace-img) */
+    /* product gallery */
     document.querySelectorAll("[data-gallery]").forEach(function (g) {
         var main = g.querySelector(".tv-replace-img");
         /* grow a photo to at most 2.4x its real size, so a small cut-out stays sharp instead of filling the frame pixelated */
@@ -436,7 +411,7 @@ used to do.
         g.querySelectorAll(".tv-current-img").forEach(function (t) { if (main && t.getAttribute("src") === main.getAttribute("src")) (t.closest("button") || t).classList.add("is-current"); });
     });
 
-    /* quantity stepper (v1: #product-product #minus / #plus / #input-quantity, minimum 1 — the note replaces v1's alert) */
+    /* quantity stepper */
     var qty = document.querySelector("#product-product #input-quantity");
     if (qty) {
         var minimum = 1, qmsg = document.querySelector("[data-qty-msg]");
